@@ -20,7 +20,8 @@ defmodule Graphical.Mixfile do
   def application do
     [
       mod: {Graphical.Application, []},
-      extra_applications: [:logger, :runtime_tools]
+      extra_applications: [:logger, :runtime_tools, :postgrex, :absinthe, :absinthe_plug, :absinthe_ecto,
+      :poison, :faker, :comeonin, :guardian, :bcrypt_elixir]
     ]
   end
 
@@ -32,19 +33,22 @@ defmodule Graphical.Mixfile do
   #
   # Type `mix help deps` for examples and options.
   defp deps do
-      [
-        {:phoenix, "~> 1.3.0"},
-        {:phoenix_pubsub, "~> 1.0"},
-        {:phoenix_ecto, "~> 3.2"},
-        {:postgrex, ">= 0.0.0"},
-        {:gettext, "~> 0.11"},
-        {:cowboy, "~> 1.0"},
-        {:poison, "~> 3.1.0"},
-        {:absinthe, "~> 1.4.6"},
-        {:absinthe_plug, "~> 1.4.2"},
-        {:absinthe_ecto, git: "https://github.com/absinthe-graphql/absinthe_ecto.git"},
-        {:faker, "~> 0.9"}
-      ]
+    [
+      {:phoenix, "~> 1.3.0"},
+      {:phoenix_pubsub, "~> 1.0"},
+      {:phoenix_ecto, "~> 3.2"},
+      {:postgrex, ">= 0.0.0"},
+      {:gettext, "~> 0.11"},
+      {:cowboy, "~> 1.0"},
+      {:poison, "~> 3.1.0"},
+      {:absinthe, "~> 1.4.6"},
+      {:absinthe_plug, "~> 1.4.2"},
+      {:absinthe_ecto, git: "https://github.com/absinthe-graphql/absinthe_ecto.git"},
+      {:faker, "~> 0.9"},
+      {:comeonin, "~> 4.0"},
+      {:bcrypt_elixir, "~> 1.0"},
+      {:guardian, "~> 1.0"}
+    ]
   end
 
   # Aliases are shortcuts or tasks specific to the current project.

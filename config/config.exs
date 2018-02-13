@@ -12,10 +12,14 @@ config :graphical,
 # Configures the endpoint
 config :graphical, GraphicalWeb.Endpoint,
   url: [host: "localhost"],
-  secret_key_base: "OmYhpZTohCGUmH3pjnz/VOZmJGaPDxXA/rOsm+CN+RQRQuBk2kJ8/fguUYQp+xFi",
+  secret_key_base: "RSbhlDSFzJwzW6zdonTqQCzUV7x603GLPfhPBzeOOYPW+0kL+NKm6MlrE/MEJjFd",
   render_errors: [view: GraphicalWeb.ErrorView, accepts: ~w(json)],
   pubsub: [name: Graphical.PubSub,
            adapter: Phoenix.PubSub.PG2]
+
+config :graphical, Graphical.Guardian,
+  issuer: "graphical",
+  secret_key: "kBm0nkEKJNrqeC4+yvEX1skzITKQdcbvV5O8U3ifHx3JYwdZUKK49CDNkYyn+8m5"
 
 # Configures Elixir's Logger
 config :logger, :console,

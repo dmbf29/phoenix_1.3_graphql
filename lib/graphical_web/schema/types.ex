@@ -16,4 +16,8 @@ defmodule GraphicalWeb.Schema.Types do
     field :user, :user, resolve: assoc(:user)
   end
 
+  object :session do
+    field :token, :string
+  end
+
 end
